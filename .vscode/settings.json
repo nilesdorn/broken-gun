@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "BrokenGun.sln"
+    "dotnet.defaultSolution": "broken-gun.sln"
 }
