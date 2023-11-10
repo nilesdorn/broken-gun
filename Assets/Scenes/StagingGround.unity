@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 10
-  dashForce: 50
+  shotForce: 25
 --- !u!1 &651066436
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 824997561}
   - component: {fileID: 824997560}
   - component: {fileID: 824997559}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: WallR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ Transform:
   m_GameObject: {fileID: 824997558}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 10.46, y: 0.01, z: 0}
+  m_LocalPosition: {x: 9.55, y: 7.62, z: 0}
   m_LocalScale: {x: 25, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 858814585}
   - component: {fileID: 858814584}
   - component: {fileID: 858814583}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: WallL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 858814582}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -10.7, y: 0.82, z: 0}
+  m_LocalPosition: {x: -9.31, y: 7.73, z: 0}
   m_LocalScale: {x: 25, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
     public float jumpForce = 10.0f;
-    public float dashForce = 50.0f;
+    public float shotForce = 50.0f;
  
     private Rigidbody2D rb;
     private Collider2D c2D;
@@ -22,14 +22,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-
-
-
-    
-
+        
         // Handle player movement
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(horizontalInput, 0) * moveSpeed;
+        
 
         // Apply movement to the player
         if (IsGrounded())
@@ -46,13 +43,13 @@ public class PlayerController : MonoBehaviour
         // Check for dashing input
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
         {
-            Dash();
+            Shoot();
         }
     }
 
     private void FixedUpdate()
     {
-  
+        //move physics calculations here? best practice
     }
 
     private void Jump()
@@ -61,18 +58,18 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    private void Dash()
+    private void Shoot()
     {
         // Calculate the direction from the player to the mouse cursor
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 dashDirection = (mousePos - transform.position).normalized;
+        Vector2 shootDirection = (mousePos - transform.position).normalized;
 
         // Apply a force in the direction opposite to the mouse cursor
-        rb.AddForce(-dashDirection * dashForce, ForceMode2D.Impulse);
+        rb.AddForce(-shootDirection * shotForce, ForceMode2D.Impulse);
     }
 
     private bool IsGrounded()
     {
-        return c2D.IsTouchingLayers(); //Can also use .IsTouchingLayera(LayerMask.GetMask("Environment"))
+        return c2D.IsTouchingLayers(LayerMask.GetMask("Environment")); //Can also use .IsTouchingLayera(LayerMask.GetMask("Environment"))
     }
 }
