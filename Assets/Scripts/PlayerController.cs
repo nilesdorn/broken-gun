@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    
     public float moveSpeed = 5.0f;
     public float jumpForce = 10.0f;
     public float shotForce = 50.0f;
@@ -26,12 +27,20 @@ public class PlayerController : MonoBehaviour
         // Handle player movement
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(horizontalInput, 0) * moveSpeed;
-        
+        if(horizontalInput < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (horizontalInput > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
 
         // Apply movement to the player
         if (IsGrounded())
         {
             rb.velocity = new Vector2(movement.x, rb.velocity.y);
+            //rb.AddForce(movement);
         }
 
         // Check for jump input
