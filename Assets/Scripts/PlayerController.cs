@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
         }
 
+        // use a timer !!
+//  or coroutiune waituntil(isgrounded)
+
+//transform.translate
         // Apply movement to the player
         if (IsGrounded())
         {
